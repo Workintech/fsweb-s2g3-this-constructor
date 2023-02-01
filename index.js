@@ -14,9 +14,32 @@
         + Bu `isim` ve `yas` i içeren bir string döndürmelidir Örnek: "Mary, 50"
 */
 
-function Kisi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Kisi(isim, yas) {
+  this.isim = isim;
+  this.yas = yas;
+  this.mide = [];
 }
+
+Kisi.prototype.ye = function(eatable) {
+  if(this.mide.length <= 10){
+    this.mide.push(eatable);
+  }
+}
+
+Kisi.prototype.bosalt = function(){
+  this.mide = [];
+}
+Kisi.prototype.toString = function(){
+  return this.isim + ", " +this.yas;
+}
+
+const me = new Kisi("Alptug",26);
+console.log(me);
+me.ye("köfte");
+me.ye("köfte");me.ye("köfte");me.ye("köfte");
+console.log(me.mide);
+me.bosalt();
+console.log(me.mide);
 
 
 /*
@@ -35,8 +58,18 @@ function Kisi(/* kodlar buraya */) {
         +  "x milde benzinim bitti!" x değişkeni `odometer` daki sayı olmalıdır.
 */
 
-function Araba(/* kodlar buraya */) {
-  /* kodlar buraya */
+function Araba(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
+  
+}
+Araba.prototype.fill = function(gallons){
+  this.tank += gallons;
+}
+Araba.prototype.drive = function(distance){
+
 }
 
 
