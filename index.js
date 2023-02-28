@@ -52,10 +52,36 @@ function Kisi(isim, yas) {
         +  "x kilometrede benzinim bitti!" x değişkeni `kilometreSaati`ndeki sayı olmalıdır.
 */
 
-function Araba(/* kodlar buraya */) {
-  /* kodlar buraya */
-}
+/*function Araba(/!* kodlar buraya *!/) {
+  /!* kodlar buraya *!/
+}*/
 
+function Araba(model,yakitTuketimi) {
+  this.model = model;
+  this.yakitTuketimi = yakitTuketimi;
+  this.benzinDeposu = 0;
+  this.kilometreSaati = 0;
+  this.doldur = function(litre){
+    this.benzinDeposu += litre;
+  }
+  this.kullan = function(mesafe){
+    this.kilometreSaati += mesafe;
+    this.benzinDeposu -= mesafe / this.yakitTuketimi;
+    if(this.benzinDeposu <=0)
+    {
+      const extraMile = this.benzinDeposu * this.yakitTuketimi;
+      this.kilometreSaati += extraMile;
+      this.benzinDeposu = 0;
+      console.log(`${this.kilometreSaati} kilometrede benzinim bitti !`);
+    }
+  }
+}
+let bmw = new Araba("320 i",15);
+bmw.doldur(65);
+bmw.kullan(125);
+bmw.kullan(950);
+console.log(bmw.benzinDeposu);
+console.log(bmw.kilometreSaati);
 
 /*
   GÖREV 3
