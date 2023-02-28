@@ -14,8 +14,8 @@
         + Bu metotla, `isim` ve `yas`i içeren bir string döndürmelisin. (Örn: "Mary, 50")
 */
 
-function Kisi(/!* kodlar buraya *!/) {
-  /!* kodlar buraya *!/
+function Kisi(/* kodlar buraya */) {
+  /* kodlar buraya */
 }
 
 /*
