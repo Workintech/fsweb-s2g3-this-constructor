@@ -54,26 +54,26 @@ describe('Kisi örnekleri', () => {
     beforeEach(() => {
       batmobile = new functions.Araba('BatMobile', 20)
     })
-    it('verilen modelde yükleniyor', () => {
+    it('istenilen modelde Araba oluştur', () => {
       expect(batmobile.model).toBe('BatMobile')
     })
-    it('verilen milesPerGallon la yükleniyor', () => {
-      expect(batmobile.milesPerGallon).toEqual(20)
+    it('yakitTuketimi ayarla', () => {
+      expect(batmobile.yakitTuketimi).toEqual(20)
     })
-    it('boş tankla yükleniyor', () => {
-      expect(batmobile.tank).toEqual(0)
+    it('benzin deposunu boşalt', () => {
+      expect(batmobile.benzinDeposu).toEqual(0)
     })
-    it('odometer 0 yükleniyor', () => {
-      expect(batmobile.odometer).toEqual(0)
+    it('kilometreSaati 0dan başlayacak', () => {
+      expect(batmobile.kilometreSaati).toEqual(0)
     })
-    /* it('prototypeda fill metodu var', () => {
-      expect(batmobile.__proto__.fill).not.toBeUndefined();
-    }) */
-    it('fill metodu tankı verilen değişken kadar artıyor', () => {
-      batmobile.fill(10)
-      expect(batmobile.tank).toEqual(10)
-      batmobile.fill(10)
-      expect(batmobile.tank).toEqual(20)
+    /*it('Arabaya benzin yüklenebiliyor (doldur)', () => {
+      expect(batmobile.__proto__.doldur).not.toBeUndefined();
+    })*/
+    it('doldur metodu ile verilen değer kadar benzinDeposuna yakıt ekleniyor.', () => {
+      batmobile.doldur(10)
+      expect(batmobile.benzinDeposu).toEqual(10)
+      batmobile.doldur(10)
+      expect(batmobile.benzinDeposu).toEqual(20)
     })
   })
   
